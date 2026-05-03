@@ -3,6 +3,25 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        seq_gui_alt_k: macro-seq {
+            compatible = "zmk,behavior-macro";
+            label = "SEQ_GUI_ALT_K";
+            #binding-cells = <0>;
+            macro = <
+                (PRESS &kp LGUI)
+                (RELEASE &kp LGUI)
+                (PRESS &kp LALT)
+                (RELEASE &kp LALT)
+                (PRESS &kp K)
+                (RELEASE &kp K)
+            >;
+        };
+    };
+};
+
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
